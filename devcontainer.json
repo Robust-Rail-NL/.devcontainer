@@ -1,0 +1,17 @@
+{
+    "name": "robust_rail_project",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptools-themes",
+        "ms-dotnettools.csharp"
+    ],
+    "mounts": [
+        "source=.,target=/workspace,type=bind"
+    ],
+}
