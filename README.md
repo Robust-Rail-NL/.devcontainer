@@ -1,6 +1,17 @@
 # .devcontainer
 This repository contains a Docker file and a configuration for VS Code - Dev Containers. With the help of this repository, all other repositories can be opened in a Docker, and via Dev Containers development is easier (all repositories are mounted on the Docker), since Dev Containers allow code modification in real time.
 
+## Issue 
+It might happen that the `"USER_UID"` and `"USER_GID"` - hardcoded in [devcontainer.json](./devcontainer.json) do not match the host machine's ids.
+In this case the `"USER_UID"` and `"USER_GID"` in [devcontainer.json](./devcontainer.json) must be specified accordingly. 
+
+To find the UID and GID of the host:
+```bash
+id -u
+id -g
+```
+
+
 ## Important
 All the repositories of the project has to be cloned before running Docker.
 Note that the cloning process assumes that the git user uses *ssh* key for the authentication to github. 
@@ -48,6 +59,4 @@ Note: all the dependencies are already contained by the Docker instance.
 ## Speed up Docker build - (Linux only)
 Linux users can speed up the build process. Open [Dockerfile](./Dockerfile): modify `FROM --platform=linux/amd64 ubuntu:20.04` to `FROM ubuntu:20.04`. 
 The `--platform=linux/amd64` has been added because new macOS versions did not support the installation of .NET-8 tools, without this specific flag. 
-
-
 

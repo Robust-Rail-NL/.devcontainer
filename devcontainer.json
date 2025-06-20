@@ -1,8 +1,15 @@
 {
     "name": "robust_rail_project",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USER_UID": "1001",
+            "USER_GID": "1001",
+            "USERNAME": "devuser"
+        }
     },
+    "remoteUser": "devuser",
+    "containerUser": "devuser",
     "workspaceFolder": "/workspace",
     "extensions": [
         "ms-vscode.cmake-tools",
