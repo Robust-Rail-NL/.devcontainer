@@ -11,6 +11,8 @@ id -u
 id -g
 ```
 
+If the `evaluator` and the `solver` were built in an older version of the docker container, both the evaluator and the solver must be re-built.
+
 
 ## Important
 All the repositories of the project has to be cloned before running Docker.
