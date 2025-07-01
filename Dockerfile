@@ -1,5 +1,10 @@
 # Use Ubuntu 20.04 as the base image
 FROM --platform=linux/amd64 ubuntu:20.04
+# The --platform parameter was added because new macOS versions did not
+# support the installation of .NET-8 tools without it.
+# Linux users can speed up the build process by instead using the following
+# base image:
+### FROM ubuntu:20.04
 
 # Set environment variables to avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
